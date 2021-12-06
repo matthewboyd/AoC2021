@@ -30,36 +30,6 @@ func main() {
 			ints[i], _ = strconv.Atoi(s)
 		}
 		boards = append(boards, ints)
-
-		// for _, val := range full_board {
-		// 	fmt.Println("val", val)
-		// 	for i := 0; i < 5; i++ {
-		// 		int_val, _ := strconv.Atoi(string(val[i]))
-		// 		int_board = append(int_board, int_val)
-		// 	}
-		// }
-		// fmt.Println("full_board", full_board)
-		// counter_row := 0
-		// var one_board []int
-		// var one_row []int
-		// for _, row := range full_board {
-		// 	row_data := strings.Split(row, " ")
-
-		// 	for _, value := range row_data {
-		// 		if len(value) != 0 {
-		// 			single_number, _ := strconv.Atoi(value)
-		// 			one_row = append(one_row, single_number)
-		// 			counter_row += 1
-		// 		}
-		// 	}
-		// 	if counter_row == 5 {
-		// 		counter_row = 0
-		// 	}
-		// }
-		// one_board = append(one_board, one_row...)
-
-		// boards = append(boards, one_board)
-
 	}
 	fmt.Println("boards", boards)
 	bingoNumbers := strings.Split(data[0], ",")
@@ -92,7 +62,6 @@ func checkNumber(board []int, bingoNumber int, boardNumber int, winners_counter 
 		}
 		if checkForWin(board) {
 
-			// boardNumber, sumOfAllNums, numberWhenItWon
 			sum := 0
 			for _, val := range board {
 				if val != -1 {
@@ -105,7 +74,6 @@ func checkNumber(board []int, bingoNumber int, boardNumber int, winners_counter 
 				winners[boardNumber] = win
 				winners_counter += 1
 				return winners_counter
-				fmt.Println("========================", sum*bingoNumber, "=======================", sum, bingoNumber)
 			}
 		}
 	}
